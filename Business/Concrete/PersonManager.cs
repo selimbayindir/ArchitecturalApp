@@ -35,6 +35,12 @@ namespace Business.Concrete
            return _persondal.GetAll();
         }
 
+        public List<Person> GetByDepartmentId(int departmentId)
+        {
+           return _persondal.GetAll(p => p.DepartmentId == departmentId);
+          
+        }
+
         public Person GetById(int id)
         {
            return _persondal.Get(p=>p.Id==id);
@@ -45,6 +51,17 @@ namespace Business.Concrete
         public void PersontToDelete(Person person)
         {
              _persondal.Delete(person);
+        }
+
+        public void Update(Person person)
+        {
+           _persondal.Update(person);
+        }
+
+        public void UpdateById(int id)
+        {
+            var person = _persondal.Get(p=>p.Id==id);
+            _persondal.Update(person);
         }
     }
 }

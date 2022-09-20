@@ -9,11 +9,17 @@ namespace Business.Abstract
 {
     public interface IPersonService
     {
+        List<Person> GetAllPerson();
         void AddEntity(Person person);
         Person GetById(int id);
         void PersontToDelete(Person person);
         void DeleteById(int id);
-        List<Person> GetAllPerson();
+        void Update(Person person);
+        void UpdateById(int id);
+        List<Person> GetByDepartmentId(int departmentId);
+
+
+
 
     }
 }

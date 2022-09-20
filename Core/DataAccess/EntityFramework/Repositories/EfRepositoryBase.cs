@@ -53,7 +53,11 @@ namespace Core.DataAccess.EntityFramework.Repositories
 
         public void Update(TEntity entity)
         {
-            throw new NotImplementedException();
+           using (TContext context = new TContext())
+            {
+                context.Entry(entity).State = EntityState.Modified;
+                context.SaveChanges();
+            }
         }
     }
 }

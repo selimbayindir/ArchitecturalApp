@@ -13,7 +13,7 @@ namespace Entities.Concrete
         {
 
         }
-        public int Name { get; set; }
+        public string Name { get; set; }
 
     }
 }

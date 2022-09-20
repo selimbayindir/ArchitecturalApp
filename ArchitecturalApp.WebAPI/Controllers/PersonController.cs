@@ -45,6 +45,24 @@ namespace ArchitecturalApp.WebAPI.Controllers
             _personService.DeleteById(id);
             return Ok();
         }
+        [HttpPut("updatebyperson")]
+        public IActionResult UpdateByPerson(Person person)
+        {
+            _personService.Update(person);
+            return Ok();
+        }
+        [HttpPut("updatebypersonId")]
+        public IActionResult UpdateToById(Person person)
+        {
+            _personService.Update(person);
+            return Ok();
+        }
+        [HttpGet("getbydepartmentıd")]
+        public IActionResult GetByDepartment(int id)
+        {
+          var result=_personService.GetByDepartmentId(id);
+            return Ok(result);
+        }
 
 
     }
